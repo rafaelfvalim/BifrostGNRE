@@ -64,6 +64,6 @@ public class RetConsNFeDestHelper {
 	}
 	public static void info(String msg) {
 		Logger.getLogger(RetConsNFeDestHelper.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

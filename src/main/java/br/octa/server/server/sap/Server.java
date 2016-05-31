@@ -140,8 +140,10 @@ public class Server {
 			String serverName = "SERVER";
 			try {
 				server = JCoServerFactory.getServer(serverName);
+				
 				info("Server Online");
 			} catch (JCoException ex) {
+				BifrostView.setLogServer(ex.getMessage());
 				throw new RuntimeException(
 						"Unable to create the server " + serverName + ", because of " + ex.getMessage(), ex);
 			}
@@ -176,7 +178,7 @@ public class Server {
 	public static void EnvioEvento(JCoFunction function) {
 		final Logger logger = Logger.getLogger(KTTSendEnvConfRecebtoWSFunctionHandler.class);
 		info("#################Inicio do envio de evento de NFes##########################");
-		BifrostView.infoView("#################Inicio do envio de evento de NFes##########################");
+		BifrostView.setLogServer("#################Inicio do envio de evento de NFes##########################");
 		info("Recebendo solicitação da RFC: " + function.getName());
 
 		RFCTOEnvConfRecbto rfctoEnvConfRecbto = new RFCTOEnvConfRecbto(function);
@@ -187,7 +189,7 @@ public class Server {
 		EnvConfRecbtoTORFC.setRFCData(function,
 				new EnvConfRecebtoServiceWS(evento, nFeEnvEventoWSData).sendEnvEvento());
 		info("#################Fim do envio de evento de NFes#############################");
-		BifrostView.infoView("#################Fim do envio de evento de NFes#############################");
+		BifrostView.setLogServer("#################Fim do envio de evento de NFes#############################");
 
 	}
 
@@ -207,7 +209,7 @@ public class Server {
 
 	public static void info(String msg) {
 		Logger.getLogger(Server.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 
 }

@@ -33,7 +33,7 @@ public class NFeBuildAllCacerts implements Runnable {
 	public void run() {
 
 		final String CACERTS_NAME = "NFeCacerts";
-		final String CACERTS_PATH = System.getProperty("user.dir") + "/src/main/resources/certificados/keystore";
+		final String CACERTS_PATH = "certificados/keystore";
 		final char SEPARATOR = File.separatorChar;
 
 		try {
@@ -146,18 +146,18 @@ public class NFeBuildAllCacerts implements Runnable {
 			OutputStream out = new FileOutputStream(cafile);
 			ks.store(out, passphrase);
 			out.close();
+			BifrostView.setLogCeritificado("Certificado instalado com sucesso!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			BifrostView.setLogCeritificado(e.getMessage());
 		}
-		BifrostView.setLogCeritificado("Certificado instalado com sucesso!");
 		BifrostView.setProgressbarStop();
 	}
 
 	public static void get(UriCaCertsEnum hostEnum, int port, KeyStore ks) throws Exception {
 		final int TIMEOUT_WS = 30;
 		final String CACERTS_NAME = "NFeCacerts";
-		final String CACERTS_PATH = System.getProperty("user.dir") + "/src/main/resources/certificados/keystore";
+		final String CACERTS_PATH = "certificados/keystore";
 		final char SEPARATOR = File.separatorChar;
 
 		String host = hostEnum.value();

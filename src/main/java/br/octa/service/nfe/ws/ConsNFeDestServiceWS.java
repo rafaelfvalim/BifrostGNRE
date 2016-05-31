@@ -73,6 +73,6 @@ public class ConsNFeDestServiceWS {
 
 	public static void info(String msg) {
 		Logger.getLogger(ConsNFeDestServiceWS.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

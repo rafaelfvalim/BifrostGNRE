@@ -66,6 +66,6 @@ public class EnvConfRecebtoServiceWS {
 
 	public static void info(String msg) {
 		Logger.getLogger(EnvConfRecebtoServiceWS.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

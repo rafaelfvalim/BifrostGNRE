@@ -20,7 +20,11 @@ import javax.crypto.NoSuchPaddingException;
 import org.apache.poi.ss.formula.functions.Today;
 
 import br.octa.utils.BlowFishUtils;
+import br.octa.utils.ConfigUtils;
+import br.octa.utils.KsUtils;
+import br.octa.utils.PreRequesitos;
 import br.octa.utils.Sys;
+import br.octa.view.validate.Validator;
 
 public class Test {
 
@@ -37,14 +41,14 @@ public class Test {
 	}
 
 	public static void setKey(String chave) throws FileNotFoundException, UnsupportedEncodingException {
-		PrintWriter writer = new PrintWriter("src/main/resources/s/p.bifrost", "UTF-8");
+		PrintWriter writer = new PrintWriter("bin/p.bifrost", "UTF-8");
 		writer.println(chave);
 		writer.close();
 	}
 
 	public static String readk() {
 		try {
-			return new String(Files.readAllBytes(Paths.get("src/main/resources/s/p.bifrost")));
+			return new String(Files.readAllBytes(Paths.get("bin/p.bifrost")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,16 +78,16 @@ public class Test {
 	public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException,
 			InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException, ParseException,
 			IOException {
-
-		if(validateK("24144943000156"))
-			System.out.println("ok");
-		else
-			System.out.println("ERRO");
-//		
-//		String chave = "BFEBFBFF00040651_123490EN400015_24144943000156_05022016";
-//		System.out.println(gKey("24144943000156"));
-//		System.out.println(BlowFishUtils.decript("dnh7fg9zbEY9Df2tZo+2W0UVj+QE3uFe17KuCXBfhWnkkyBw/L4HInMhiLBYp1K8"));
+//
+//		System.out.println("23.122.275/0001-01".replaceAll("[-+.^:,/]", ""));
+//		String cnpj = "23.122.275/0001-01";
+//		String cnpjFormatado  = String.format("%s.%s.%s/%s-%s", cnpj.substring(0, 2), cnpj.substring(3, 6),cnpj.substring(7,10),cnpj.substring(11,15),cnpj.substring(16,18) );
+//		System.out.println(cnpjFormatado);
+////		String chave = "BFEBFBFF00040651_123490EN400015_24144943000156_05022016";
+////		System.out.println(gKey("24144943000156"));
+//		System.out.println(BlowFishUtils.decript("dnh7fg9zbEY9Df2tZo+2W0UVj+QE3uFe17KuCXBfhWkB46LwwX8ia7dPqGr2W2oSsXXNoADJ8hklBolKF89UpA=="));
 //		setKey(BlowFishUtils.cript("BFEBFBFF00040651_123490EN400015_24144943000156_11052016"));
+		PreRequesitos.verificar();
 	}
 
 }

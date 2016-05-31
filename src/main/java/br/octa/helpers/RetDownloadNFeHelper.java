@@ -64,6 +64,6 @@ public class RetDownloadNFeHelper {
 	}
 	public static void info(String msg) {
 		Logger.getLogger(RetDownloadNFeHelper.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

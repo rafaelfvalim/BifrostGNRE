@@ -70,6 +70,6 @@ public class EnvConfRecebtoHelper {
 	}
 	public static void info(String msg) {
 		Logger.getLogger(EnvConfRecebtoHelper.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

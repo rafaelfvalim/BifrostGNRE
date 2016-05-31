@@ -66,6 +66,6 @@ public class RetEnvConfRecebtoHelper {
 	}
 	public static void info(String msg) {
 		Logger.getLogger(RetEnvConfRecebtoHelper.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

@@ -1,6 +1,10 @@
 package br.octa.utils;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 import javax.swing.JOptionPane;
 
@@ -17,7 +21,15 @@ public class ConfigUtils {
 	}
 
 	public static void setCNPJ(String cnpj) {
-		PropertyUtils.setPropertyAndStore("cnpj", cnpj);
+		PropertyUtils.setPropertyAndStore("cnpj", cnpj.replaceAll("[-+.^:,/]", ""));
+	}
+
+	public static void setChave(String chave) {
+		PropertyUtils.setPropertyAndStore("chave", chave);
+	}
+
+	public static String getChave() {
+		return PropertyUtils.getValue("chave");
 	}
 
 	public static String getCNPJ() {
@@ -96,21 +108,50 @@ public class ConfigUtils {
 
 	public static boolean checkRequirements() {
 		File certificado = new File(ConfigUtils.getArquivoCertificado());
-		File caCert = new File(ConfigUtils.getNFeCacerts());
+		File caCert = new File("certificados/keystore/NFeCacerts");
 		File ABAP_AS_WITH_POOL = new File("ABAP_AS_WITH_POOL.jcoDestination");
 		File ABAP_AS_WITHOUT_POOL = new File("ABAP_AS_WITHOUT_POOL.jcoDestination");
 		File SERVER = new File("SERVER.jcoServer");
+		File sapjco3dll = new File("C:\\WINDOWS\\System32\\sapjco3.dll");
+		
 		if (Security.wihteHabbit()) {
 
-			if (certificado.exists() && caCert.exists() && SERVER.exists() && ABAP_AS_WITH_POOL.exists()
-					&& ABAP_AS_WITHOUT_POOL.exists()) {
-				return true;
-			} else {
-				String msg = "Impossível iniciar o servidor, verifique a configuração";
-				Logger.getLogger(Server.class).info(msg);
-				BifrostView.infoView(msg);
+			if (!sapjco3dll.exists()) {
+				String msg = "Impossível iniciar o servidor, sapjco3.dll não encontrada, verifique a configuração";
+				BifrostView.setLogServer(msg);
 				throw new RuntimeException(msg);
 			}
+
+			
+			if (!certificado.exists()) {
+				String msg = "Impossível iniciar o servidor, certificado não instalado, verifique a configuração";
+				BifrostView.setLogServer(msg);
+				throw new RuntimeException(msg);
+			}
+
+			if (!caCert.exists()) {
+				String msg = "Impossível iniciar o servidor, certificado não instalado, verifique a configuração";
+				BifrostView.setLogServer(msg);
+				throw new RuntimeException(msg);
+			}
+
+			if (!SERVER.exists()) {
+				String msg = "Impossível iniciar o servidor, configure a conexão com o SAP, verifique a configuração";
+				BifrostView.setLogServer(msg);
+				throw new RuntimeException(msg);
+			}
+			if (!ABAP_AS_WITH_POOL.exists()) {
+				String msg = "Impossível iniciar o servidor, configure a conexão com o SAP, verifique a configuração";
+				BifrostView.setLogServer(msg);
+				throw new RuntimeException(msg);
+			}
+			if (!ABAP_AS_WITHOUT_POOL.exists()) {
+				String msg = "Impossível iniciar o servidor, configure a conexão com o SAP, verifique a configuração";
+				BifrostView.setLogServer(msg);
+				throw new RuntimeException(msg);
+			}
+			return true;
+
 		} else {
 			JOptionPane.showMessageDialog(null,
 					"Olá \n Esse programa ainda não foi registrado \n Entre em contatno com a www.klustter.com.br");

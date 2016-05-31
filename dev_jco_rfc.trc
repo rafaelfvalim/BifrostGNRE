@@ -6298,3 +6298,1107 @@ com.sap.conn.jco.ext.SessionException: (171) JCO_ERROR_PASSIVATE_SESSION: Sessio
 	at com.sap.conn.jco.rt.DefaultServerWorker.run(DefaultServerWorker.java:245)
 	at java.lang.Thread.run(Thread.java:745)
 
+
+**** Error file opened at 20160511 143146 Brasilia Time Rel 3.0.9 (2012-07-19) [720.713]
+Error:  >Wed May 11 14:31:46,046<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     175
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,087<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     167
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,089<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     163
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,090<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     176
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,092<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     173
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,094<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     169
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,096<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     159
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,098<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     158
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,100<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     161
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,101<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     174
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,102<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     162
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,103<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     168
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,104<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     171
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,105<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     172
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,106<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     177
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,106<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     170
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,107<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     160
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,108<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     164
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,109<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     166
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:31:46,110<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:34:25 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     165
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,164<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     204
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,166<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     207
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,169<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     205
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,171<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     206
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,173<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     210
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,174<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     209
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:44,175<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:23 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     208
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:33:46,174<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [9] >Wed May 11 14:33:46,175<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,176<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [10] >Wed May 11 14:33:46,177<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,178<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [11] >Wed May 11 14:33:46,179<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,180<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [12] >Wed May 11 14:33:46,181<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,183<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [13] >Wed May 11 14:33:46,183<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,185<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [14] >Wed May 11 14:33:46,186<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,187<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [15] >Wed May 11 14:33:46,188<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,189<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [16] >Wed May 11 14:33:46,190<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,191<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [17] >Wed May 11 14:33:46,191<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,192<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [18] >Wed May 11 14:33:46,193<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,194<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [19] >Wed May 11 14:33:46,195<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,195<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [20] >Wed May 11 14:33:46,196<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,197<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [21] >Wed May 11 14:33:46,198<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+Error:  >Wed May 11 14:33:46,198<    
+>RfcIoException:
+    message: no message received
+    Return code: RFCIO_ERROR_SYSERROR(5)<
+
+
+Error: [2] >Wed May 11 14:33:46,199<    RfcException: [OCTA_BASELINE|JCO_SERVER]
+    message: no message received
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+Exception raised by OCTA_BASELINE|JCO_SERVER
+
+
+**** Error file opened at 20160511 143417 Brasilia Time Rel 3.0.9 (2012-07-19) [720.713]
+Error:  >Wed May 11 14:34:17,197<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     257
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,212<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     268
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,213<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     266
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,214<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     271
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,215<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     269
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,217<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     270
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,218<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     273
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,219<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     272
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,220<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     274
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,221<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     276
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,223<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     267
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,224<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     275
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,226<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     265
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,227<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     264
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,228<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     258
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,229<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     260
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,230<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     262
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,231<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     261
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,232<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     259
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Error:  >Wed May 11 14:34:17,233<    
+>RfcIoException:
+    message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAPERP60SRV1.dwconsulting.com.br / sapgw00
+ERROR       registration of tp JCO_SERVER from host OCTA_BASELINE not
+            allowed
+TIME        Wed May 11 14:36:56 2016
+RELEASE     720
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      gwxxrd.c
+LINE        3641
+COUNTER     263
+
+    Return code: RFCIO_ERROR_REGISTRATION_DENIED(35)<
+
+
+Exception thrown [Wed May 11 14:54:05,579]:Exception thrown by application running in JCo Server
+java.lang.NullPointerException
+	at br.octa.intefaces.mappers.ConfNFeDestTORFC.setRFCData(ConfNFeDestTORFC.java:13)
+	at br.octa.server.server.sap.Server.ConsultaNFeDestinatario(Server.java:204)
+	at br.octa.server.server.sap.Server$KTTSendConsNfeDestWsFunctionHandler.handleRequest(Server.java:101)
+	at com.sap.conn.jco.rt.DefaultServerWorker$FunctionDispatcher.handleRequest(DefaultServerWorker.java:1052)
+	at com.sap.conn.jco.rt.DefaultServerWorker$FunctionDispatcher.handleRequest(DefaultServerWorker.java:980)
+	at com.sap.conn.jco.rt.DefaultServerWorker.dispatchRequest(DefaultServerWorker.java:160)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcServer.dispatchRequest(MiddlewareJavaRfc.java:3366)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcServer.listen(MiddlewareJavaRfc.java:2415)
+	at com.sap.conn.jco.rt.DefaultServerWorker.dispatch(DefaultServerWorker.java:284)
+	at com.sap.conn.jco.rt.DefaultServerWorker.loop(DefaultServerWorker.java:369)
+	at com.sap.conn.jco.rt.DefaultServerWorker.run(DefaultServerWorker.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+
+Exception thrown [Wed May 11 14:54:05,593]:Application threw an exception from endCall 
+com.sap.conn.jco.ext.SessionException: (171) JCO_ERROR_PASSIVATE_SESSION: Session not active. The session 'Server-51-1' could not be passivated within the current thread.
+	at com.sap.conn.jco.ext.DefaultSessionReferenceProvider.jcoServerSessionPassivated(DefaultSessionReferenceProvider.java:136)
+	at com.sap.conn.jco.rt.DefaultServerWorker.callFinishedInternal(DefaultServerWorker.java:502)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcServer.listen(MiddlewareJavaRfc.java:2424)
+	at com.sap.conn.jco.rt.DefaultServerWorker.dispatch(DefaultServerWorker.java:284)
+	at com.sap.conn.jco.rt.DefaultServerWorker.loop(DefaultServerWorker.java:369)
+	at com.sap.conn.jco.rt.DefaultServerWorker.run(DefaultServerWorker.java:245)
+	at java.lang.Thread.run(Thread.java:745)
+

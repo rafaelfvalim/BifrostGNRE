@@ -19,10 +19,9 @@ public class ViewUtils {
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyyMMddHHmmss");
 		String folder = ConfigUtils.getFolderLog();
 		String path = folder + "/" + layout.valor() + "_" + dateformat.format(date) + ".xml";
-		
-		BifrostView.getDataLog();
 		try {
 			Files.write(Paths.get(path), xml.getBytes(), StandardOpenOption.CREATE);
+			BifrostView.getDataLog();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

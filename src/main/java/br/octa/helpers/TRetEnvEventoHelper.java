@@ -38,6 +38,6 @@ public class TRetEnvEventoHelper {
 	}
 	public static void info(String msg) {
 		Logger.getLogger(TRetEnvEventoHelper.class).info(msg);
-		BifrostView.infoView(msg);
+		BifrostView.setLogServer(msg);
 	}
 }

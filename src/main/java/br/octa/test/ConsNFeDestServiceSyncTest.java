@@ -9,7 +9,7 @@ public class ConsNFeDestServiceSyncTest {
 		String versao = "1.01";
 		String tpAmb = "2";
 		String xServ = "CONSULTAR NFE DEST";
-		String cnpj = "24144943000156";
+		String cnpj = "24 144 943 000156";
 		String indNFe = "0";
 		String indEmi = "0";
 		String ultNSU = "0";

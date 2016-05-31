@@ -5,10 +5,13 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -27,6 +30,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -37,6 +41,7 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import com.google.common.io.Files;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
@@ -48,8 +53,8 @@ import br.octa.utils.JCOPropertyUtils;
 import br.octa.utils.JCOUtils;
 import br.octa.utils.KsUtils;
 import br.octa.utils.ViewUtils;
-import javax.swing.JSeparator;
-import java.awt.Toolkit;
+import br.octa.view.validate.Validator;
+import javax.swing.JFormattedTextField;
 
 public class BifrostView {
 
@@ -74,9 +79,9 @@ public class BifrostView {
 	private JTextField txtSysNumber;
 	private static JTextArea textAreaLogConexao;
 	private JTextField txtKeyRegistro;
-	private JTextField txtCnpjRegistro;
-	private JTextField txtNumeroSistemaRegistro;
-	private JTextField txtChaveInstalacao;
+	private JTextField txtChaveRegistro;
+	private static JFormattedTextField txtCnpjRegistro;
+	private static JTextArea txtAreaInformacaoRegistro;
 
 	/**
 	 * Launch the application.
@@ -85,10 +90,7 @@ public class BifrostView {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					try {
-						UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-					} catch (Exception e) {
-					}
+					UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 					BifrostView window = new BifrostView();
 					window.frmBifrostInetegrator.setVisible(true);
 
@@ -182,7 +184,7 @@ public class BifrostView {
 
 		txtClient = new JTextField();
 		panel.add(txtClient);
-		txtClient.setColumns(10);
+		txtClient.setColumns(3);
 
 		JLabel lblSysNumber = new JLabel("System Number*:");
 		lblSysNumber.setFont(new Font("SansSerif", Font.BOLD, 14));
@@ -191,7 +193,7 @@ public class BifrostView {
 
 		txtSysNumber = new JTextField();
 		panel.add(txtSysNumber);
-		txtSysNumber.setColumns(10);
+		txtSysNumber.setColumns(2);
 
 		JLabel label = new JLabel("Language*:");
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -200,7 +202,7 @@ public class BifrostView {
 
 		txtLanguage = new JTextField();
 		panel.add(txtLanguage);
-		txtLanguage.setColumns(10);
+		txtLanguage.setColumns(2);
 
 		JLabel lblNumeroConexoes = new JLabel("Numero de Threads:");
 		lblNumeroConexoes.setFont(new Font("SansSerif", Font.BOLD, 14));
@@ -273,10 +275,13 @@ public class BifrostView {
 					String sapGateway = txtSapGW.getText();
 					String sapProgramId = txtProgramId.getText();
 					String sapConnectionCount = txtConnectionCount.getText();
+
 					setLogConfigSAP("Gerando configuração SAP");
+
 					JCOUtils.createDestination(sapHost, sapSysNumber, sapClient, user, password, language, sapGateway,
 							sapProgramId, sapConnectionCount);
-					setLogConfigSAP("Configuração realizada com sucesso!");
+
+					setLogConfigSAP(Ts.CONFIGURACAO_REALIZADA_COM_SUCESSO);
 				}
 			}
 		});
@@ -291,8 +296,7 @@ public class BifrostView {
 
 		JTextPane txtpnConfiguraoDaConexo = new JTextPane();
 		txtpnConfiguraoDaConexo.setFont(new Font("SansSerif", Font.PLAIN, 14));
-		txtpnConfiguraoDaConexo.setText(
-				"Configura\u00E7\u00E3o da conex\u00E3o entre o integrador e o sistema SAP.\r\nForne\u00E7a os dados da conex\u00E3o.\r\n");
+		txtpnConfiguraoDaConexo.setText(Ts.MENAGEM_CONFIGURACAO_CONEXAO);
 		txtpnConfiguraoDaConexo.setEditable(false);
 		txtpnConfiguraoDaConexo.setBounds(6, 6, 474, 308);
 		panel_1.add(txtpnConfiguraoDaConexo);
@@ -361,9 +365,9 @@ public class BifrostView {
 			public void actionPerformed(ActionEvent e) {
 				setProgressbarStart();
 				if ("".equals(txtCertificado.getText())) {
-					JOptionPane.showMessageDialog(null, "Selecione um certificado válido");
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_SELECIONE_CERTIFICADO_VALIDO);
 				} else if ("".equals(txtSenha.getText())) {
-					JOptionPane.showMessageDialog(null, "Favor informar a senha do certificado");
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INOFRME_SENHA_CERTIFICADO);
 				} else {
 					File certificado = new File(txtCertificado.getText());
 					setLogCeritificado("Carregando Certificado " + certificado.getName());
@@ -453,23 +457,23 @@ public class BifrostView {
 		mntmSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StringBuilder msg = new StringBuilder();
-				msg.append("Octa Especialista em TI\n");
+				msg.append("Octa Especialistas em TI\n");
 				msg.append("Bifrost Integrador Manifesto de Destinatário\n");
 				msg.append("Copyright Octa© 2015-2016\n");
 				JOptionPane.showMessageDialog(null, msg.toString(), "Sobre", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		mnAjuda.add(mntmSobre);
-		
+
 		JSeparator separator_1 = new JSeparator();
 		mnAjuda.add(separator_1);
-		
+
 		JMenuItem mntmRegistrar = new JMenuItem("Registrar");
 		mntmRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout) (frmBifrostInetegrator.getContentPane().getLayout());
 				cl.show(frmBifrostInetegrator.getContentPane(), "cardRegistro");
-				
+
 			}
 		});
 		mnAjuda.add(mntmRegistrar);
@@ -495,7 +499,6 @@ public class BifrostView {
 		});
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(6, 337, 952, 192);
 
 		txtAreaLog = new JTextArea();
@@ -538,72 +541,127 @@ public class BifrostView {
 		JLabel lblLogMonitor = new JLabel("Log Monitor:");
 		lblLogMonitor.setBounds(7, 317, 111, 16);
 		panelPrincipal.add(lblLogMonitor);
-		
+
 		JPanel panelRegistro = new JPanel();
 		frmBifrostInetegrator.getContentPane().add(panelRegistro, "cardRegistro");
 		panelRegistro.setLayout(null);
-		
+
 		txtKeyRegistro = new JTextField();
-		txtKeyRegistro.setBounds(222, 82, 519, 28);
+		txtKeyRegistro.setBounds(222, 122, 519, 28);
 		panelRegistro.add(txtKeyRegistro);
 		txtKeyRegistro.setColumns(10);
-		
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(437, 242, 90, 28);
-		panelRegistro.add(btnRegistrar);
-		
-		txtCnpjRegistro = new JTextField();
-		txtCnpjRegistro.setColumns(10);
-		txtCnpjRegistro.setBounds(222, 42, 519, 28);
-		panelRegistro.add(txtCnpjRegistro);
-		
+
 		JLabel lblCnpj = new JLabel("CNPJ");
 		lblCnpj.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCnpj.setBounds(461, 23, 41, 16);
+		lblCnpj.setBounds(461, 6, 41, 16);
 		panelRegistro.add(lblCnpj);
-		
-		JLabel lblKey = new JLabel("Key");
+
+		JLabel lblKey = new JLabel("Chave de registro");
 		lblKey.setHorizontalAlignment(SwingConstants.CENTER);
-		lblKey.setBounds(461, 67, 41, 16);
+		lblKey.setBounds(405, 103, 154, 16);
 		panelRegistro.add(lblKey);
-		
-		JLabel lblNewLabel = new JLabel("<html><body>\r\n<center>\r\nOl\u00E1 <br> \r\nVoc\u00EA ainda n\u00E3o tem uma chave de registro?<br>\r\nObtenha uma no site www.klustter.com.br.\r\n</center></body></html>");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(235, 267, 494, 86);
-		panelRegistro.add(lblNewLabel);
-		
-		txtNumeroSistemaRegistro = new JTextField();
-		txtNumeroSistemaRegistro.setColumns(10);
-		txtNumeroSistemaRegistro.setBounds(222, 122, 519, 28);
-		panelRegistro.add(txtNumeroSistemaRegistro);
-		
-		JLabel lblNumeroDoSistema = new JLabel("Numero do Sistema SAP");
-		lblNumeroDoSistema.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumeroDoSistema.setBounds(368, 108, 227, 16);
-		panelRegistro.add(lblNumeroDoSistema);
-		
-		txtChaveInstalacao = new JTextField();
-		txtChaveInstalacao.setColumns(10);
-		txtChaveInstalacao.setBounds(222, 162, 519, 28);
-		panelRegistro.add(txtChaveInstalacao);
-		
-		JLabel lblChaveDoSistema = new JLabel("Chave do Sistema");
-		lblChaveDoSistema.setHorizontalAlignment(SwingConstants.CENTER);
-		lblChaveDoSistema.setBounds(368, 147, 227, 16);
-		panelRegistro.add(lblChaveDoSistema);
-		
-		JButton btnChaveSistema = new JButton("Gerar Chave do Sistema");
-		btnChaveSistema.addActionListener(new ActionListener() {
+
+		JLabel lblInfoRegistro = new JLabel();
+		lblInfoRegistro.setBounds(756, 151, 494, 216);
+		panelRegistro.add(lblInfoRegistro);
+
+		try {
+			txtAreaInformacaoRegistro = new JTextArea();
+			txtAreaInformacaoRegistro.setFont(new Font("SansSerif", Font.BOLD, 13));
+			txtAreaInformacaoRegistro.setEditable(false);
+			if (KsUtils.chkdskRegistro()) {
+				txtAreaInformacaoRegistro.setText(Ts.MENSAGEM_REGISTRO);
+			} else {
+				txtAreaInformacaoRegistro.setText(Ts.MENSAGEM_NAO_REGISTRO);
+			}
+			txtAreaInformacaoRegistro.setToolTipText("");
+			txtAreaInformacaoRegistro.setBounds(113, 242, 738, 165);
+			panelRegistro.add(txtAreaInformacaoRegistro);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtChaveInstalacao.setText(KsUtils.gKey(txtCnpjRegistro.getText()));
-				ConfigUtils.setCNPJ(txtCnpjRegistro.getText());
+				try {
+					if (KsUtils.setKey(txtKeyRegistro.getText().trim())) {
+						JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_SUCESSO_REGISTRO);
+						txtAreaInformacaoRegistro.setText(Ts.MENSAGEM_REGISTRO);
+					}
+				} catch (FileNotFoundException e1) {
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_ERRO_REGISTRO);
+					e1.printStackTrace();
+				} catch (UnsupportedEncodingException e1) {
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_ERRO_REGISTRO);
+					e1.printStackTrace();
+				}
 			}
 		});
-		btnChaveSistema.setBounds(385, 202, 193, 28);
+		btnRegistrar.setBounds(437, 202, 90, 28);
+		panelRegistro.add(btnRegistrar);
+
+		txtChaveRegistro = new JTextField();
+		txtChaveRegistro.setColumns(10);
+		txtChaveRegistro.setBounds(222, 73, 519, 28);
+		panelRegistro.add(txtChaveRegistro);
+
+		JLabel lblChaveDoSistema = new JLabel("Numero de instala\u00E7\u00E3o");
+		lblChaveDoSistema.setHorizontalAlignment(SwingConstants.CENTER);
+		lblChaveDoSistema.setBounds(368, 52, 227, 16);
+		panelRegistro.add(lblChaveDoSistema);
+
+		JButton btnChaveSistema = new JButton("Gerar numero de instala\u00E7\u00E3o");
+		btnChaveSistema.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if ("".equals(txtCnpjRegistro.getText())) {
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_CNPJ);
+				} else if (!Validator.validaCnpj(txtCnpjRegistro.getText())) {
+					JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_CNPJ_VALIDO);
+				} else {
+					String chave = KsUtils.gCh(txtCnpjRegistro.getText());
+					txtChaveRegistro.setText(chave);
+					ConfigUtils.setCNPJ(txtCnpjRegistro.getText());
+					ConfigUtils.setChave(chave);
+				}
+			}
+		});
+		btnChaveSistema.setBounds(385, 162, 193, 28);
 		panelRegistro.add(btnChaveSistema);
+
+		JLabel label_1 = new JLabel("1");
+		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_1.setBounds(155, 29, 55, 16);
+		panelRegistro.add(label_1);
+
+		JLabel label_2 = new JLabel("2");
+		label_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_2.setBounds(155, 79, 55, 16);
+		panelRegistro.add(label_2);
+
+		JLabel label_3 = new JLabel("3");
+		label_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_3.setBounds(155, 128, 55, 16);
+		panelRegistro.add(label_3);
+		MaskFormatter mf1;
+		try {
+			mf1 = new MaskFormatter("##.###.###/####-##");
+			mf1.setPlaceholderCharacter('_');
+			txtCnpjRegistro = new JFormattedTextField(mf1);
+			txtCnpjRegistro.setBounds(222, 23, 519, 28);
+			panelRegistro.add(txtCnpjRegistro);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 	}
 
-	public static void infoView(String msg) {
+	public static void setLogServer(String msg) {
 		Date date = new Date();
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		txtAreaLog.append(dateformat.format(date) + " :: " + msg + "\n");
@@ -615,9 +673,10 @@ public class BifrostView {
 	}
 
 	public static void getDataLog() {
-
-		while (tableLog.getRowCount() > 0) {
-			((DefaultTableModel) tableLog.getModel()).removeRow(0);
+		if (tableLog.getRowCount() > 0) {
+			while (tableLog.getRowCount() > 0) {
+				((DefaultTableModel) tableLog.getModel()).removeRow(0);
+			}
 		}
 		int count = 0;
 		for (String filePath : ViewUtils.getFilesFromFolder(ConfigUtils.getFolderLog())) {
@@ -657,30 +716,38 @@ public class BifrostView {
 	}
 
 	public boolean validate() {
-
 		if ("".equals(txtUser.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o nome do usuário");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENAGEM_INFORME_NOME_USUARIO);
 			return false;
 		} else if ("".equals(txtPasssword.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe a senha");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_SENHA);
 			return false;
 		} else if ("".equals(txtClient.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o client sap");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_CLIENT_SAP);
+			return false;
+		} else if ("".equals(txtSysNumber.getText())) {
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_SYSNUM_SAP);
+			return false;
+		} else if (txtSysNumber.getText().length() != 2) {
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_SYSNUM_SAP_EROR_SIZE);
+			return false;
+		} else if (txtClient.getText().length() != 3) {
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_CLIENT_SAP_ERROR_SIZE);
 			return false;
 		} else if ("".equals(txtLanguage.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe a language sap");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_LANGUAGE_SAP);
 			return false;
 		} else if ("".equals(txtProgramId.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o programa registrado");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_PROGRAMA_REGISTRADO);
 			return false;
 		} else if ("".equals(txtSapGW.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o gateway SAP");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_GW_SAP);
 			return false;
 		} else if ("".equals(txtSapHost.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o IP ou nome do host SAP");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_HOST_SAP);
 			return false;
 		} else if ("".equals(txtConnectionCount.getText())) {
-			JOptionPane.showMessageDialog(null, "Informe o numero de threads");
+			JOptionPane.showMessageDialog(frmBifrostInetegrator, Ts.MENSAGEM_INFORME_NUMERO_THREADS);
 			return false;
 		}
 		return true;
