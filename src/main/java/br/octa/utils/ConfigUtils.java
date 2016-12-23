@@ -1,18 +1,12 @@
 package br.octa.utils;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 import javax.swing.JOptionPane;
 
-import org.apache.log4j.Logger;
-
 import br.inf.portalfiscal.security.Security;
-import br.octa.server.server.sap.Server;
 import br.octa.view.BifrostView;
+import br.octa.view.Ts;
 
 public class ConfigUtils {
 
@@ -153,8 +147,7 @@ public class ConfigUtils {
 			return true;
 
 		} else {
-			JOptionPane.showMessageDialog(null,
-					"Olá \n Esse programa ainda não foi registrado \n Entre em contatno com a www.klustter.com.br");
+			JOptionPane.showMessageDialog(null,Ts.MESSAGE_REGISTRO);
 			throw new RuntimeException("Programa não registrado!");
 		}
 

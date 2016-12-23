@@ -94,14 +94,16 @@
 			<version>1.6.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sap.conn.jco</groupId>
+			<groupId>com.sap.conn.jco </groupId>
 			<artifactId>sapjco3</artifactId>
 			<version>3.0</version>
+			<scope>system</scope>
+			<systemPath>C:/Users/root/workspace/BifrostGNRE/sapjco/sapjco3.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ws.commons.axiom</groupId>
-			<artifactId>axiom</artifactId>
-			<version>1.2.11</version>
+			<artifactId>axiom-api</artifactId>
+			<version>1.2.10</version>
 			<type>pom</type>
 			<scope>runtime</scope>
 		</dependency>

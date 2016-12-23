@@ -8,10 +8,13 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -20,7 +23,9 @@ import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -29,13 +34,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
@@ -49,16 +54,16 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import br.inf.portalfiscal.security.NFeBuildAllCacerts;
 import br.octa.server.server.sap.Server;
 import br.octa.utils.ConfigUtils;
+import br.octa.utils.FileOctaUtils;
 import br.octa.utils.JCOPropertyUtils;
 import br.octa.utils.JCOUtils;
 import br.octa.utils.KsUtils;
 import br.octa.utils.ViewUtils;
 import br.octa.view.validate.Validator;
-import javax.swing.JFormattedTextField;
 
 public class BifrostView {
 
-	private JFrame frmBifrostInetegrator;
+	private static JFrame frmBifrostInetegrator;
 	private boolean sapOnline;
 	private boolean sefazOnline;
 	private static JTextArea txtAreaLog;
@@ -86,7 +91,7 @@ public class BifrostView {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -525,12 +530,79 @@ public class BifrostView {
 		model.addColumn("#");
 		model.addColumn("Data");
 		model.addColumn("Interface");
+		model.addColumn("Arquivo");
 		tableLog = new JTable(model);
 
+		ActionListener menuListener = new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				String thePath = tableLog.getValueAt(tableLog.getSelectedRow(), 3).toString();
+				switch (event.getActionCommand().toString()) {
+				case "Salvar":
+					salveFile(thePath);
+					break;
+				case "Vizualizar":
+					try {
+						String content = FileOctaUtils.readFile(thePath, StandardCharsets.UTF_8);
+						FileVizualizer dialog = new FileVizualizer(content, thePath);
+						dialog.setTitle(thePath.substring(thePath.lastIndexOf("\\"), thePath.length()));
+						dialog.setIconImage(
+								Toolkit.getDefaultToolkit().getImage("images/network_transmit_receive.png"));
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					break;
+				case "Apagar":
+					if (JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar o aquivo?", "WARNING",
+							JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+						File file = new File(thePath);
+						file.delete();
+						getDataLog();
+					}
+					break;
+				default:
+					break;
+				}
+
+			}
+		};
+
+		JPopupMenu popup = new JPopupMenu();
+		JMenuItem item;
+		popup.add(item = new JMenuItem("Salvar", new ImageIcon("images/disk.png")));
+		item.addActionListener(menuListener);
+		popup.add(item = new JMenuItem("Vizualizar", new ImageIcon("images/page_code.png")));
+		item.addActionListener(menuListener);
+		popup.addSeparator();
+		popup.add(item = new JMenuItem("Apagar", new ImageIcon("images/delete.png")));
+		item.addActionListener(menuListener);
+
+		tableLog.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				int r = tableLog.rowAtPoint(e.getPoint());
+				if (r >= 0 && r < tableLog.getRowCount()) {
+					tableLog.setRowSelectionInterval(r, r);
+				} else {
+					tableLog.clearSelection();
+				}
+
+				int rowindex = tableLog.getSelectedRow();
+				if (rowindex < 0)
+					return;
+				if (e.isPopupTrigger() && e.getComponent() instanceof JTable) {
+					popup.show(e.getComponent(), e.getX(), e.getY());
+				}
+			}
+		});
+
 		tableLog.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		tableLog.getColumnModel().getColumn(0).setPreferredWidth(140);
-		tableLog.getColumnModel().getColumn(1).setPreferredWidth(400);
-		tableLog.getColumnModel().getColumn(2).setPreferredWidth(400);
+		tableLog.getColumnModel().getColumn(0).setPreferredWidth(50);
+		tableLog.getColumnModel().getColumn(1).setPreferredWidth(140);
+		tableLog.getColumnModel().getColumn(2).setPreferredWidth(370);
+		tableLog.getColumnModel().getColumn(3).setPreferredWidth(400);
 
 		scrollPane_1.setViewportView(tableLog);
 
@@ -667,9 +739,9 @@ public class BifrostView {
 		txtAreaLog.append(dateformat.format(date) + " :: " + msg + "\n");
 	}
 
-	public static void addRowLog(int count, String data, String layout) {
+	public static void addRowLog(int count, String data, String layout, String filepath) {
 		DefaultTableModel model = (DefaultTableModel) tableLog.getModel();
-		model.addRow(new Object[] { count, data, layout });
+		model.addRow(new Object[] { count, data, layout, filepath });
 	}
 
 	public static void getDataLog() {
@@ -686,6 +758,7 @@ public class BifrostView {
 			String data = fileName.substring(fileName.lastIndexOf("_") + 1, fileName.lastIndexOf(".xml"));
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 			SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			String filepath = p.toString();
 			Date date = null;
 			try {
 				date = formatter.parse(data);
@@ -693,7 +766,7 @@ public class BifrostView {
 				e.printStackTrace();
 			}
 			String dateFormated = dateformat.format(date);
-			BifrostView.addRowLog(count, dateFormated, layout);
+			BifrostView.addRowLog(count, dateFormated, layout, filepath);
 			count++;
 		}
 
@@ -752,4 +825,24 @@ public class BifrostView {
 		}
 		return true;
 	}
+
+	public static void salveFile(String thePath) {
+		JFileChooser chooser = new JFileChooser();
+		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		chooser.setApproveButtonText("Salvar");
+		int option = chooser.showOpenDialog(null);
+		if (option == JFileChooser.APPROVE_OPTION) {
+			File file = chooser.getSelectedFile();
+			File o = new File(thePath);
+			try {
+				String filedestination = file + thePath.substring(thePath.lastIndexOf("\\"), thePath.length());
+				Files.copy(o, new File(filedestination));
+				JOptionPane.showMessageDialog(frmBifrostInetegrator, "Arquivo salvo com sucesso! \n " + filedestination,
+						"Bifrost Octa", JOptionPane.INFORMATION_MESSAGE);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }

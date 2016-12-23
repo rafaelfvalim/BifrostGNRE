@@ -38,6 +38,7 @@ public class EnvConfRecebtoServiceWS {
 		return callWs(xml);
 	}
 
+	@SuppressWarnings("deprecation")
 	private TRetEnvEvento callWs(StringBuilder xml) {
 		try {
 				
